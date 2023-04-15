@@ -1,11 +1,10 @@
 package modthedd;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import modthedd.cards.BaseCard;
 import modthedd.character.MyCharacter;
 import modthedd.util.GeneralUtils;
 import modthedd.util.KeywordInfo;
@@ -33,6 +32,7 @@ import java.util.Set;
 @SpireInitializer
 public class BasicMod implements
         EditCharactersSubscriber,
+        EditCardsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber {
@@ -218,5 +218,13 @@ public class BasicMod implements
         BaseMod.addCharacter(new MyCharacter(),
                 CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, MyCharacter.Enums.YOUR_CHARACTER);
 
+    }
+
+    @Override
+    public void receiveEditCards() {
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseCard.class) //In the same package as this class
+                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .cards(); //Adds the cards
     }
 }
