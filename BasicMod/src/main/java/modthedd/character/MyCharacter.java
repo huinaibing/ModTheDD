@@ -22,6 +22,10 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import modthedd.cards.primary.Defence;
+import modthedd.cards.primary.Strike;
+import modthedd.cards.primary.shoumi;
+import modthedd.cards.primary.yinye;
 
 import java.util.ArrayList;
 
@@ -81,11 +85,18 @@ public class MyCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike_Red.ID);
-        retVal.add(Strike_Red.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Neutralize.ID);
+        retVal.add(Defence.ID);
+        retVal.add(Defence.ID);
+        retVal.add(Defence.ID);
+        retVal.add(Defence.ID);
+
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+
+        retVal.add(yinye.ID);
+        retVal.add(shoumi.ID);
 
         return retVal;
     }

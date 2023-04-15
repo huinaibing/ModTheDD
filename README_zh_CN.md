@@ -48,7 +48,7 @@
 
 ![img](./img/016738A26A6D094F51F301E6A849A16A.png)
 
-营业
++ 营业
 
 初始
 
@@ -66,7 +66,7 @@
 
 ### 蓝色
 
-骂谁罕见whohanjian
+* 骂谁罕见whohanjian
 
 罕见
 

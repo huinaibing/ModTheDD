@@ -50,5 +50,23 @@
       "收米",
       "装扮"
     ]
+  },
+  "${modID}:yinye": {
+    "NAME": "营业",
+    "DESCRIPTION": "获得 !B! 点格挡 NL 所有敌人获得一层虚弱",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡 NL 所有敌人获得一层虚弱",
+    "EXTENDED_DESCRIPTION": [
+      "小禾",
+      "",
+      ""
+    ]
+  },
+  "${modID}:whohanjian": {
+    "NAME": "骂谁罕见",
+    "DESCRIPTION": "获得 !M! 点力量 NL 所有敌人获得 !M! 层脆弱",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点力量 NL 所有敌人获得 !M! 层脆弱",
+    "EXTENDED_DESCRIPTION": [
+      "东雪莲"
+    ]
   }
 }
