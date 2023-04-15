@@ -12,11 +12,42 @@
 
   "${modID}:Strike": {
     "NAME": "打击",
-    "DESCRIPTION": "造成!D!点伤害",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害",
+    "DESCRIPTION": "造成 !D! 点伤害",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害",
     "EXTENDED_DESCRIPTION": [
       "螺丝刀",
       "草莓猫",
+      "装扮"
+    ]
+  },
+
+  "${modID}:Defence": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 格挡",
+    "UPGRADE_DESCRIPTION": "获得 !B! 格挡",
+    "EXTENDED_DESCRIPTION": [
+      "夏小姐",
+      "绝壁",
+      "装扮"
+    ]
+  },
+  "${modID}:shoumi": {
+    "NAME": "收米",
+    "DESCRIPTION": "抽一张牌 NL 获得 !M! 金币",
+    "UPGRADE_DESCRIPTION": "抽一张牌 NL 获得 !M! 金币",
+    "EXTENDED_DESCRIPTION": [
+      "米虫",
+      "收米",
+      "装扮"
+    ]
+  },
+  "${modID}:superchat": {
+    "NAME": "SuperChat",
+    "DESCRIPTION": "造成 !D! 点伤害 NL 每有一个敌人失去 !M! 金币",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 NL 每有一个敌人失去 !M! 金币",
+    "EXTENDED_DESCRIPTION": [
+      "早稻叽",
+      "收米",
       "装扮"
     ]
   }

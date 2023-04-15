@@ -38,7 +38,11 @@ public class BasicMod implements
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID;
-    static { loadModInfo(); }
+
+    static {
+        loadModInfo();
+    }
+
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
     private static final String resourcesFolder = "modthedd";
 
@@ -55,7 +59,7 @@ public class BasicMod implements
     // end load images
 
     //choose a color for character
-    private static final Color cardColor = new Color(60f/255f, 100f/255f, 210f/255f, 1f);
+    private static final Color cardColor = new Color(60f / 255f, 100f / 255f, 80f / 255f, 1f);
     //red, green, blue, alpha. alpha is transparency, which should just be 1.
     // end choose
 
@@ -80,7 +84,6 @@ public class BasicMod implements
                 SMALL_ORB);
 
 
-
     }
 
     public BasicMod() {
@@ -100,10 +103,10 @@ public class BasicMod implements
     /*----------Localization----------*/
 
     //This is used to load the appropriate localization files based on language.
-    private static String getLangString()
-    {
+    private static String getLangString() {
         return Settings.language.name().toLowerCase();
     }
+
     private static final String defaultLanguage = "eng";
 
     @Override
@@ -118,8 +121,7 @@ public class BasicMod implements
         if (!defaultLanguage.equals(getLangString())) {
             try {
                 loadLocalization(getLangString());
-            }
-            catch (GdxRuntimeException e) {
+            } catch (GdxRuntimeException e) {
                 e.printStackTrace();
             }
         }
@@ -147,8 +149,7 @@ public class BasicMod implements
     }
 
     @Override
-    public void receiveEditKeywords()
-    {
+    public void receiveEditKeywords() {
         Gson gson = new Gson();
         String json = Gdx.files.internal(localizationPath(defaultLanguage, "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
         KeywordInfo[] keywords = gson.fromJson(json, KeywordInfo[].class);
@@ -157,16 +158,13 @@ public class BasicMod implements
         }
 
         if (!defaultLanguage.equals(getLangString())) {
-            try
-            {
+            try {
                 json = Gdx.files.internal(localizationPath(getLangString(), "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
                 keywords = gson.fromJson(json, KeywordInfo[].class);
                 for (KeywordInfo keyword : keywords) {
                     registerKeyword(keyword);
                 }
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 logger.warn(modID + " does not support " + getLangString() + " keywords.");
             }
         }
@@ -184,12 +182,15 @@ public class BasicMod implements
     public static String resourcePath(String file) {
         return resourcesFolder + "/" + file;
     }
+
     public static String characterPath(String file) {
         return resourcesFolder + "/character/" + file;
     }
+
     public static String powerPath(String file) {
         return resourcesFolder + "/powers/" + file;
     }
+
     public static String relicPath(String file) {
         return resourcesFolder + "/relics/" + file;
     }
@@ -197,7 +198,7 @@ public class BasicMod implements
 
     //This determines the mod's ID based on information stored by ModTheSpire.
     private static void loadModInfo() {
-        Optional<ModInfo> infos = Arrays.stream(Loader.MODINFOS).filter((modInfo)->{
+        Optional<ModInfo> infos = Arrays.stream(Loader.MODINFOS).filter((modInfo) -> {
             AnnotationDB annotationDB = Patcher.annotationDBMap.get(modInfo.jarURL);
             if (annotationDB == null)
                 return false;
@@ -207,8 +208,7 @@ public class BasicMod implements
         if (infos.isPresent()) {
             info = infos.get();
             modID = info.ID;
-        }
-        else {
+        } else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
     }
