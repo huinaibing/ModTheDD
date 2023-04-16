@@ -1,11 +1,13 @@
 package modthedd.cards.gold;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import modthedd.cards.BaseCard;
 import modthedd.character.MyCharacter;
 import modthedd.util.CardInfo;
@@ -15,11 +17,11 @@ import java.util.Iterator;
 
 import static modthedd.BasicMod.makeID;
 
-public class superchat extends BaseCard {
+public class mihiru extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
-            "superchat", //Card ID. Will be prefixed with mod id, so the final ID will be "modID:MyCard" with whatever your mod's ID is.
-            0, //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
-            CardType.ATTACK, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
+            "mihiru", //Card ID. Will be prefixed with mod id, so the final ID will be "modID:MyCard" with whatever your mod's ID is.
+            3, //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
+            CardType.SKILL, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
             CardTarget.ALL_ENEMY, //The target. Single target is ENEMY, all enemies is ALL_ENEMY. Look at cards similar to what you want to see what to use.
             CardRarity.RARE, //Rarity. BASIC is for starting cards, then there's COMMON/UNCOMMON/RARE, and then SPECIAL and CURSE. SPECIAL is for cards you only get from events. Curse is for curses, except for special curses like Curse of the Bell and Necronomicurse.
             MyCharacter.Enums.CARD_COLOR //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or something similar for a basegame character color.
@@ -33,30 +35,23 @@ public class superchat extends BaseCard {
 
     //These will be used in the constructor. Technically you can just use the values directly,
     //but constants at the top of the file are easy to adjust.
-    private static final int DMG = 30;
-//    private static final int UPG_DRAW_CARD = 0;
-    private static final int UPG_DMG = 20;
-    private static final int L_MONEY = 30;
-    private static final int UPG_L_MONEY = 20;
-    int count = 0;
-    public superchat() {
+
+    private static final int MG = 99;
+    public mihiru() {
         super(cardInfo);
-        setDamage(DMG, UPG_DMG);
-        setMagic(L_MONEY);
+        setMagic(MG);
         this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int count = 0;
-
         for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
             if (!mon.isDeadOrEscaped()) {
-                ++count;
+                this.addToBot(new ApplyPowerAction(mon, p, new WeakPower(mon, MG, false)));
+                this.addToBot(new ApplyPowerAction(mon, p, new FrailPower(mon, MG, false)));
             }
         }
-        addToBot(new DamageAllEnemiesAction(p, DMG, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        AbstractDungeon.player.loseGold(this.magicNumber * count);
+
     }
 
 
@@ -64,13 +59,12 @@ public class superchat extends BaseCard {
     {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPG_DMG);
-            this.upgradeMagicNumber(UPG_L_MONEY);
+            this.upgradeBaseCost(2);
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new superchat();
+        return new mihiru();
     }
 }

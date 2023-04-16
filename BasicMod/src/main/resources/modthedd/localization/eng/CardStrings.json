@@ -63,10 +63,66 @@
   },
   "${modID}:whohanjian": {
     "NAME": "骂谁罕见",
-    "DESCRIPTION": "获得 !M! 点力量 NL 所有敌人获得 !M! 层脆弱",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点力量 NL 所有敌人获得 !M! 层脆弱",
+    "DESCRIPTION": "获得 !M! 点力量 NL 所有敌人获得 !M! 层易伤 NL * 消耗",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点力量 NL 所有敌人获得 !M! 层易伤 NL * 消耗",
     "EXTENDED_DESCRIPTION": [
       "东雪莲"
+    ]
+  },
+  "${modID}:ybb": {
+    "NAME": "ybb",
+    "DESCRIPTION": "造成 !D! 点伤害 NL 获得 !M! 层易伤",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 NL 获得 !M! 层易伤",
+    "EXTENDED_DESCRIPTION": [
+      "LKD"
+    ]
+  },
+  "${modID}:xinzhibi": {
+    "NAME": "心之壁",
+    "DESCRIPTION": "获得8点护甲 NL 回合结束时获得 !M! 点多层护甲和金属化和易伤",
+    "UPGRADE_DESCRIPTION": "获得8点护甲 NL 回合结束时获得 !M! 点多层护甲和金属化和易伤",
+    "EXTENDED_DESCRIPTION": [
+      "梓"
+    ]
+  },
+  "${modID}:maoleizuiqiang": {
+    "NAME": "猫雷最强",
+    "DESCRIPTION": "猫雷最强！猫雷最强！猫雷最强！",
+    "UPGRADE_DESCRIPTION": "猫雷最强！猫雷最强！猫雷最强！ NL 猫雷最强！猫雷最强！猫雷最强！",
+    "EXTENDED_DESCRIPTION": [
+      "猫雷最强！"
+    ]
+  },
+  "${modID}:kaihe": {
+    "NAME": "开盒",
+    "DESCRIPTION": "造成 !D! 点伤害 NL 给与 !M! 层易伤与脆弱",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 NL 给与 !M! 层易伤与脆弱",
+    "EXTENDED_DESCRIPTION": [
+      "夜音盒的盒时开盒的盒"
+    ]
+  },
+  "${modID}:heidaoqianjin": {
+    "NAME": "黑道千金",
+    "DESCRIPTION": "获得 !M! 层力量 NL 造成 !D! 点群伤 NL 若目标数量为1则再攻击一次",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层力量 NL 造成 !D! 点群伤 NL 若目标数量为1则再攻击一次",
+    "EXTENDED_DESCRIPTION": [
+      ""
+    ]
+  },
+  "${modID}:vryaonv": {
+    "NAME": "VR妖女",
+    "DESCRIPTION": "获得 !M! 层再生和金币 NL * 消耗",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层再生和金币 * 消耗",
+    "EXTENDED_DESCRIPTION": [
+      "miki"
+    ]
+  },
+  "${modID}:mihiru": {
+    "NAME": "[mihiru]刀",
+    "DESCRIPTION": "敌方全体获得 !M! 层脆弱和虚弱 * 消耗",
+    "UPGRADE_DESCRIPTION": "敌方全体获得 !M! 层脆弱和虚弱 * 消耗",
+    "EXTENDED_DESCRIPTION": [
+      "mihiru"
     ]
   }
 }

@@ -4,5 +4,12 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "${modID}:YBBPower": {
+    "NAME": "心之壁加厚",
+    "DESCRIPTIONS": [
+      "回合结束时获得",
+      "层金属化和多层护甲和易伤"
+    ]
   }
 }

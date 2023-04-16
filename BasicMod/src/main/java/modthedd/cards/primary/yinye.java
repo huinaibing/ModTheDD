@@ -46,7 +46,7 @@ public class yinye extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, BLOCK));
+        addToBot(new GainBlockAction(p, p, BLOCK));
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
 
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {

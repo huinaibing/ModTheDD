@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import modthedd.cards.BaseCard;
 import modthedd.character.MyCharacter;
 import modthedd.util.CardInfo;
@@ -37,9 +37,11 @@ public class whohanjian extends BaseCard {
     private static final int MG = 1;
     //    private static final int UPG_DRAW_CARD = 0;
     private static final int MG_UPG = 1;
+
     public whohanjian() {
         super(cardInfo);
         setMagic(MG, MG_UPG);
+        this.exhaust = true;
     }
 
     @Override
@@ -49,15 +51,14 @@ public class whohanjian extends BaseCard {
 
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                 if (!monster.isDead && !monster.isDying) {
-                    this.addToBot(new ApplyPowerAction(monster, p, new FrailPower(monster, this.magicNumber, false)));
+                    this.addToBot(new ApplyPowerAction(monster, p, new VulnerablePower(monster, this.magicNumber, false)));
                 }
             }
         }
     }
 
 
-    public void upgrade()
-    {
+    public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(MG_UPG);

@@ -56,9 +56,11 @@ public class MyCharacter extends CustomPlayer {
         //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
         public static AbstractPlayer.PlayerClass YOUR_CHARACTER;
-        @SpireEnum(name = "CHARACTER_GRAY_COLOR") // These two MUST match. Change it to something unique for your character.
+        @SpireEnum(name = "CHARACTER_GRAY_COLOR")
+        // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
-        @SpireEnum(name = "CHARACTER_GRAY_COLOR") @SuppressWarnings("unused")
+        @SpireEnum(name = "CHARACTER_GRAY_COLOR")
+        @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -85,15 +87,12 @@ public class MyCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Defence.ID);
-        retVal.add(Defence.ID);
-        retVal.add(Defence.ID);
-        retVal.add(Defence.ID);
-
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
+        for (int i = 0; i < 4; i++) {
+            retVal.add(Strike.ID);
+        }
+        for (int i = 0; i < 4; i++) {
+            retVal.add(Defence.ID);
+        }
 
         retVal.add(yinye.ID);
         retVal.add(shoumi.ID);
@@ -127,7 +126,7 @@ public class MyCharacter extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         //These attack effects will be used when you attack the heart.
-        return new AbstractGameAction.AttackEffect[] {
+        return new AbstractGameAction.AttackEffect[]{
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL,
                 AbstractGameAction.AttackEffect.SLASH_HEAVY,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY
@@ -137,6 +136,7 @@ public class MyCharacter extends CustomPlayer {
     private final Color cardRenderColor = Color.LIGHT_GRAY.cpy(); //Used for some vfx on moving cards (sometimes) (maybe)
     private final Color cardTrailColor = Color.LIGHT_GRAY.cpy(); //Used for card trail vfx during gameplay.
     private final Color slashAttackColor = Color.LIGHT_GRAY.cpy(); //Used for a screen tint effect when you attack the heart.
+
     @Override
     public Color getCardRenderColor() {
         return cardRenderColor;
@@ -167,6 +167,7 @@ public class MyCharacter extends CustomPlayer {
         CardCrawlGame.sound.playA("ATTACK_DAGGER_2", MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
+
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
         //Similar to doCharSelectScreenSelectEffect, but used for the Custom mode screen. No shaking.
@@ -178,14 +179,17 @@ public class MyCharacter extends CustomPlayer {
     public String getLocalizedCharacterName() {
         return NAMES[0];
     }
+
     @Override
     public String getTitle(PlayerClass playerClass) {
         return NAMES[1];
     }
+
     @Override
     public String getSpireHeartText() {
         return TEXT[1];
     }
+
     @Override
     public String getVampireText() {
         return TEXT[2]; //Generally, the only difference in this text is how the vampires refer to the player.
