@@ -124,5 +124,61 @@
     "EXTENDED_DESCRIPTION": [
       "mihiru"
     ]
+  },
+  "${modID}:peijiu": {
+    "NAME": "陪酒",
+    "DESCRIPTION": "每有一个敌人获得 !M! 层中毒 所有敌人获得缓慢",
+    "UPGRADE_DESCRIPTION": "每有一个敌人获得 !M! 层中毒 所有敌人获得缓慢",
+    "EXTENDED_DESCRIPTION": [
+      "天神下凡一陪6"
+    ]
+  },
+  "${modID}:opw": {
+    "NAME": "W",
+    "DESCRIPTION": "抽 !M! 张牌 NL 将X放入抽牌堆",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌 NL 将X放入抽牌堆",
+    "EXTENDED_DESCRIPTION": [
+      "天神下凡一陪6"
+    ]
+  },
+  "${modID}:opx": {
+    "NAME": "X",
+    "DESCRIPTION": "抽 !M! 张牌 NL 将O放入抽牌堆",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌 NL 将O放入抽牌堆",
+    "EXTENDED_DESCRIPTION": [
+      "天神下凡一陪6"
+    ]
+  },
+  "${modID}:opo": {
+    "NAME": "O",
+    "DESCRIPTION": "抽 !M! 张牌 NL 将P放入抽牌堆",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌 NL 将P放入抽牌堆",
+    "EXTENDED_DESCRIPTION": [
+      "天神下凡一陪6"
+    ]
+  },
+  "${modID}:opp": {
+    "NAME": "P",
+    "DESCRIPTION": "对所有敌人造成999伤害",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成999伤害",
+    "EXTENDED_DESCRIPTION": [
+      "天神下凡一陪6"
+    ]
+  },
+  "${modID}:bushinaip": {
+    "NAME": "不是奶P",
+    "DESCRIPTION": "获得 !B! 格挡 NL 力量 !M!",
+    "UPGRADE_DESCRIPTION": "获得 !B! 格挡 NL 力量 !M!",
+    "EXTENDED_DESCRIPTION": [
+      "熊猫头"
+    ]
+  },
+  "${modID}:tianxuanguov": {
+    "NAME": "天选国v",
+    "DESCRIPTION": "获得 !B! 格挡 NL !M! 金属化",
+    "UPGRADE_DESCRIPTION": "获得 !B! 格挡 NL !M! 金属化",
+    "EXTENDED_DESCRIPTION": [
+      "LULU"
+    ]
   }
 }
